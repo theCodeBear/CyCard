@@ -9,7 +9,7 @@ a:visited {
 }
 
 i {
-  /*font-size: 2em;*/
+  font-size: 1.7em;
   color: black;
 }
 
@@ -18,10 +18,48 @@ i {
   text-align: center;
 }
 
+.title {
+  /*margin-top: -1em;*/
+}
+
+.settingsItemNotTop {
+  border-top: 1px solid black;
+}
+
+.settingsItem {
+  font-size: 1.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 1em;
+}
+
+.settingsItem:hover {
+  background-color: gray;
+}
+
+#logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 #loginWrapper {
 }
 
 #login {
   font-size: 2em;
   font-weight: 200;
+}
+
+#dropdown {
+  text-align: right;
+}
+
+#settingsDropDown {
+  position: absolute;
+  top: 100%;
+  background-color: lightgray;
+  right: 0;
+  width: 10em;
+  display: none;
 }
