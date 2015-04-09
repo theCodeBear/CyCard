@@ -8,13 +8,21 @@ a:visited {
   color: initial;
 }
 
+label input[readonly] {
+  background-color: white !important;
+}
+
+.navbar {
+  height: 44px;   /* height of the navbar */
+  margin-bottom: 0;
+}
+
 i {
   font-size: 1.7em;
   color: black;
 }
 
 .center {
-  /*width: 70%;*/
   text-align: center;
 }
 
@@ -43,23 +51,36 @@ i {
   top: 0;
 }
 
+#loginContent {
+  background: url('../img/sfSkyline.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+}
+
 #loginWrapper {
 }
 
 #login {
+  /*position: absolute;*/
   font-size: 2em;
   font-weight: 200;
+  /*top: 50%;*/
+  margin-top: 5em;
 }
 
 #dropdown {
   text-align: right;
 }
 
-#settingsDropDown {
+.settingsDropDown {
   position: absolute;
   top: 100%;
   background-color: lightgray;
   right: 0;
   width: 10em;
   display: none;
+}
+
+#accountButton {
+
 }

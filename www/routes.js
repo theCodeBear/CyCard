@@ -8,42 +8,63 @@ angular.module('cycard')
 
   .state('login', {
     url: '/',
-    templateUrl: 'views/login/login.html'
+    templateUrl: 'views/login/login.html',
+    controller: 'loginCtrl'
   })
 
   .state('register', {
     url: '/register',
-    templateUrl: 'views/register/register.html'
+    templateUrl: 'views/register/register.html',
+    controller: 'registerCtrl'
   })
+
+  // .state('received', {
+  //   url: '/received',
+  //   views: {
+  //     'navbar': {
+  //       templateUrl: 'views/navbar/navbar.html',
+  //       controller: 'navbarCtrl'
+  //     },
+  //     'main': {
+  //       templateUrl: 'views/received/received.html',
+  //     }
+  //   }
+  // })
 
   .state('received', {
     url: '/received',
-    templateUrl: 'views/received/received.html'
+    templateUrl: 'views/received/received.html',
+    controller: 'receivedCtrl'
   })
 
-  .state('sentTo', {
-    url: '/sentTo',
-    templateUrl: 'views/sentTo/sentTo.html'
+  .state('sent', {
+    url: '/sent',
+    templateUrl: 'views/sent/sent.html',
+    controller: 'sentCtrl'
   })
 
   .state('search', {
     url: '/search',
-    templateUrl: 'views/search/search.html'
+    templateUrl: 'views/search/search.html',
+    controller: 'searchCtrl'
   })
 
   .state('userCard', {
     url: '/userCard',
-    templateUrl: 'views/userCard/userCard.html'
+    templateUrl: 'views/userCard/userCard.html',
+    controller: 'userCardCtrl'
   })
 
   .state('show/:id', {
     url: '/show',
-    templateUrl: 'views/show/show.html'
+    templateUrl: 'views/show/show.html',
+    controller: 'showCtrl'
   })
 
   .state('account', {
     url: '/account',
-    templateUrl: 'views/account/account.html'
+    templateUrl: 'views/account/account.html',
+    controller: 'accountCtrl'
   })
 
 }]);

@@ -1,5 +1,36 @@
 <ion-view>
   <ion-content>
-    Account
+    <div class='navbar' ng-include="'views/navbar/navbar.html'"></div>
+    
+    <!-- 'Saved' Banner -->
+    <div class="bar bar-header bar-balanced ng-hide">
+      <h1 class="title">Saved</h1>
+    </div>
+
+    <div class='list'>
+      <label class='item item-input'>
+        <input type='text' name='name' placeholder='Full Name' ng-readonly='notEditing'>
+      </label>
+      <label class='item item-input'>
+        <input type='email' name='email' placeholder='Email' ng-readonly='notEditing'>
+      </label>
+      <label class='item item-input'>
+        <input type='password' name='password' placeholder='Password' ng-readonly='notEditing'>
+      </label>
+      <label class='item item-input'>
+        <input type='password' name='password2' placeholder='Confirm Password' ng-readonly='notEditing'>
+      </label>
+      <!-- <label class='item item-input'>
+        <input type='text' name='job' placeholder='Job Title'>
+      </label>
+      <label class='item item-input'>
+        <input type='text' name='location' placeholder='Location'>
+      </label> -->
+    </div>
+    <div class='row' style='margin-left: 0;'>
+        <button id='editSave' class='button button-energized col col-33 col-offset-33' on-touch='toggleEditSave(editSave)'>{{ editSave }}</button>
+    </div>
+
+    <button id='logout' style='margin-top: 12em;' class='button button-dark button-full' on-touch='logout()'> Logout </button>
   </ion-content>
 </ion-view>

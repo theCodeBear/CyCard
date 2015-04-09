@@ -1,14 +1,6 @@
 <ion-view>
-  <ion-pane>
-    <ion-header-bar align-title='left' class="bar-stable">
-      <h1 class="title"><img ui-sref='received' src='img/cycardLogo.png'></h1>
-      <button class='button button-clear' ui-sref='search'><i class='ion-ios-search'></i></button>
-      <!-- <button class='button button-clear' onclick="window.open('http://www.google.com', '_system', 'location=yes'); return false;"><i class='ion-ios-gear'></i></button> -->
-    </ion-header-bar>
-    <ion-content>
-    
+  <ion-content>
+    <div class='navbar' ng-include="'views/navbar/navbar.html'"></div>
     search
-  </ion-content>
-    </ion-pane>
-  
+  </ion-content>  
 </ion-view>

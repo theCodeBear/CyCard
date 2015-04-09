@@ -1,8 +1,8 @@
 <ion-view>
   <ion-content>
-  <!-- <ion-nav-view='navbar'></ion-nav-view> -->
-  <div class='navbar' ng-include="'views/navbar/navbar.html'"></div>
-  <div class='list'>
+    <div class='navbar' ng-include="'views/navbar/navbar.html'"></div>
+    
+    <div class='list'>
     <a class='item item-thumbnail-left' href='#' ng-repeat='person in fakeData'>
       <img ng-src='{{person.picture}}'>
       <h2 class='inline'>{{ person.name }}</h2><br>
