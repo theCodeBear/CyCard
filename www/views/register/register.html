@@ -1,5 +1,31 @@
 <ion-view>
   <ion-content>
-    Register
+    <ion-header-bar class="bar-stable navbar" align-title='center' ng-controller='navbarCtrl'>
+      <div class='title'>{{ title }}</div>
+    </ion-header-bar>
+
+    <div class='list'>
+      <label class='item item-input'>
+        <input type='text' name='name' placeholder='Full Name'>
+      </label>
+      <label class='item item-input'>
+        <input type='email' name='email' placeholder='Email'>
+      </label>
+      <label class='item item-input'>
+        <input type='password' name='password' placeholder='Password'>
+      </label>
+      <label class='item item-input'>
+        <input type='password' name='password2' placeholder='Confirm Password'>
+      </label>
+      <!-- <label class='item item-input'>
+        <input type='text' name='job' placeholder='Job Title'>
+      </label>
+      <label class='item item-input'>
+        <input type='text' name='location' placeholder='Location'>
+      </label> -->
+    </div>
+    <div class='row' style='margin-left: 0;'>
+        <button id='editSave' class='button button-energized col col-33 col-offset-33' on-touch='register()'>Register</button>
+    </div>
   </ion-content>
 </ion-view>

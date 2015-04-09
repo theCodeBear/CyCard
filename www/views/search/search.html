@@ -1,6 +1,20 @@
 <ion-view>
   <ion-content>
     <div class='navbar' ng-include="'views/navbar/navbar.html'"></div>
-    search
+
+    <label class='item item-input'>
+      <i class='icon ion-search placeholder-icon'></i>
+      <input type='text' ng-model='search' placeholder='Search' ng-keypress='showList()'>
+    </label>
+
+    <div id='searchList' class='list ng-hide'>
+      <a ng-repeat='person in fakeData | filter:{firstName: search}' class='item item-thumbnail-left' href='#'>
+        <img ng-src='{{person.picture}}'>
+        <h2 class='inline'>{{ person.fullName }}</h2><br>
+        <h4 class='inline'>{{ person.job }}</h4>
+        <h4>{{ person.location }}</h4>
+        <h4 class='inline skill' ng-repeat='skill in person.skills'>{{ skill }}</h4>
+      </a>
+    </div>
   </ion-content>  
 </ion-view>

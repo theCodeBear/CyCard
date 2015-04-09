@@ -9,7 +9,7 @@ a:visited {
 }
 
 label input[readonly] {
-  background-color: white !important;
+  /*background-color: white !important;*/
 }
 
 .navbar {

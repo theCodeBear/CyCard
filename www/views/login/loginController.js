@@ -14,6 +14,6 @@ angular.module('cycard')
 
   $scope.login = function() {
     $rootScope.loggedIn = true;
-    $state.go('received');
+    $state.go('register');
   };
 }]);

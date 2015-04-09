@@ -1,5 +1,9 @@
 angular.module('cycard')
 
-.controller('registerCtrl', ['$scope', function($scope) {
+.controller('registerCtrl', ['$scope', '$state', function($scope, $state) {
+
+  $scope.register = function() {
+    $state.go('userCard');
+  };
 
 }]);
