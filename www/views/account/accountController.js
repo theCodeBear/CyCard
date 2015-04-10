@@ -8,13 +8,15 @@ angular.module('cycard')
   $scope.toggleEditSave = function(text) {
     if (text === 'Edit') {
       $scope.editSave = 'Save';
-      $(editSave).addClass('button-positive');
-      $(editSave).removeClass('button-energized')
+      $('#editSave').addClass('button-positive');
+      $('#editSave').removeClass('button-energized');
+      $('#editSave').css('color', 'white');
       $scope.notEditing = false;
     } else {
       $scope.editSave = 'Edit';
-      $(editSave).addClass('button-energized');
-      $(editSave).removeClass('button-positive');
+      $('#editSave').addClass('button-energized');
+      $('#editSave').removeClass('button-positive');
+      $('#editSave').css('color', 'black');
       $scope.notEditing = true;
     }
   };
