@@ -12,12 +12,16 @@ angular.module('cycard')
       $('#editSaveCard').addClass('button-positive');
       $('#editSaveCard').removeClass('button-energized')
       $('#editSaveCard').css('color', 'white');
+      $('#editSaveCard').addClass('fa fa-floppy-o');
+      $('#editSaveCard').removeClass('icon ion-edit');
       $scope.notEditing = false;
     } else {
       $scope.editSave = 'Edit';
       $('#editSaveCard').addClass('button-energized');
       $('#editSaveCard').removeClass('button-positive');
       $('#editSaveCard').css('color', 'black');
+      $('#editSaveCard').removeClass('fa fa-floppy-o');
+      $('#editSaveCard').addClass('icon ion-edit');
       $scope.notEditing = true;
     }
   };
@@ -51,11 +55,12 @@ angular.module('cycard')
   $scope.color = '#000000';
   $('#colorCardLabel').css('background-color', $scope.color);
   $scope.cardColor = '#DDDDAA';
-  // $('#backgroundColoCardLabel').css('background-color', $scope.cardColor);
+  $('#backgroundColorCardLabel').css('background-color', $scope.cardColor);
   $('#userCard').css('background-color', $scope.cardColor);
 
   $scope.changeBackgroundColor = function(color) {
     $('#userCard').css('background-color', color);
+    $('#backgroundColorCardLabel').css('background-color', color);
   };
 
   $scope.changeLabelColor = function(color) {

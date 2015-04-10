@@ -2,7 +2,8 @@
   <ion-content >
     <button id='homeCardButton' class='button icon ion-home cardViewButton' ui-sref='received'></button>
     <button id='editSaveCard' class='button button-energized icon ion-edit cardViewButton' on-touch='cardMode(editSave)'></button>
-    <button id='flipCard' class='button icon ion-email cardViewButton' on-touch='flipCard()'></button>
+    <!-- <button id='flipCard' class='button icon ion-ios-loop-strong cardViewButton' on-touch='flipCard()'></button> -->
+    <!-- <i class="fa fa-floppy-o"></i> -->
 
     <!-- <button id='colorCard' class='button button-royal icon ion-bucket carViewButton' on-touch='' -->
 
@@ -12,6 +13,7 @@
 
     <label id='colorCardLabel' class='cardViewButton' ng-hide='notEditing'>
       <input id='colorCard' type='color' ng-model='color' ng-change='changeLabelColor(color)'>
+      <i id='colorDropper' class="fa fa-eyedropper" style='color: white; text-shadow: 0 0 1px black'></i>
     </label>
 
     <div class='wholeView'>

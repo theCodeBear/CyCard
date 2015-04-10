@@ -136,8 +136,8 @@ i {
 }
 
 #backgroundColorCardLabel {
-  top: 85%;
-  left: 10px;
+  /*top: 85%;*/
+  left: 42%;
   border: 1px solid black;
 }
 
@@ -146,8 +146,8 @@ i {
 }
 
 #colorCardLabel {
-  top: 85%;
-  left: 10px;
+  /*top: 85%;*/
+  left: 42%;
   width: 30px;
   margin-left: 18px;
   margin-top: 18px;
@@ -156,6 +156,15 @@ i {
 
 #colorCard {
   visibility: hidden;
+}
+
+#colorDropper {
+  position: absolute;
+  vertical-align: middle;
+  top: 4px;
+  left: 5px;
+  text-align: center;
+  font-size: 0.7em;
 }
 
 .cardViewButton {
