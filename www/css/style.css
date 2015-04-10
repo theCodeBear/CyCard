@@ -89,11 +89,32 @@ i {
   color: black;
 }
 
+.wholeView {
+  width: inherit;
+  height: inherit;
+}
+
 /* userCard View */
 .card {
-  padding: 40px;
-  background-color: #CCC;
+  padding: 10px;
+  text-align: center;
+  background-color: #DDA;
   margin: 0;
+  width: 95%;
+  height: 95%;
+}
+
+.card label {
+  width: 100%;
+}
+
+.card input {
+  background-color: rgba(0,0,0,0.5);
+  display: block;
+}
+
+.card input[readonly] {
+  background-color: rgba(0,0,0,0);
 }
 
 #editSaveCard {
@@ -104,6 +125,15 @@ i {
 
 #homeCardButton {
   left: 10px;
+  background-color: black;
+  color: white;
+}
+
+#flipCard {
+  top: 85%;
+  right: 10px;
+  background-color: black;
+  color: white;
 }
 
 .cardViewButton {
@@ -116,4 +146,39 @@ i {
   border-radius: 50%;
   font-size: 2em;
   color: black;
+}
+
+#userCardName {
+  text-align: center;
+  font-size: 2.5em;
+  height: 150%;
+  width: 100%;
+}
+
+#userCardJob {
+  text-align: center;
+  font-size: 1.5em;
+  width: 100%;
+  font-style: italic;
+  font-weight: 300;
+}
+
+#userCardLocation {
+  text-align: center;
+  width: 100%;
+}
+
+#userCardEmail {
+  text-align: center;
+  width: 100%;
+}
+
+#userCardLinks {
+  display: inline;
+  text-align: center;
+}
+
+#userCardSkills {
+  display: inline;
+  text-align: center;
 }

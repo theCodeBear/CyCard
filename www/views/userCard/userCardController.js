@@ -4,6 +4,7 @@ angular.module('cycard')
 
   $scope.editSave = 'Edit';
   $scope.notEditing = true;
+  $scope.side1 = true;
 
   $scope.cardMode = function(text) {
     if (text === 'Edit') {
@@ -19,6 +20,10 @@ angular.module('cycard')
       $('#editSaveCard').css('color', 'black');
       $scope.notEditing = true;
     }
+  };
+
+  $scope.flipCard = function() {
+
   };
 
   $scope.user = {

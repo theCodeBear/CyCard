@@ -1,28 +1,35 @@
 <ion-view>
   <ion-content>
-    <button id='homeCardButton' class='button button-calm icon ion-home cardViewButton' ui-sref='received'></button>
+    <button id='homeCardButton' class='button icon ion-home cardViewButton' ui-sref='received'></button>
     <button id='editSaveCard' class='button button-energized icon ion-edit cardViewButton' on-touch='cardMode(editSave)'></button>
-    <div class='card'>
-      <div class='list'>
-        <img src='#'>
-        <label class='item item-input'>
-          <input type='text' name='name' placeholder='Full Name' value='{{user.name}}' ng-readonly='notEditing'>
-        </label>
-        <label class='item item-input'>
-          <input type='text' name='job' placeholder='Job Title/Company' value='{{user.job}}' ng-readonly='notEditing'>
-        </label>
-        <label class='item item-input'>
-          <input type='text' name='location' placeholder='City, State' value='{{user.location}}' ng-readonly='notEditing'>
-        </label>
-        <label class='item item-input'>
-          <input type='email' name='email' placeholder='Email' value='{{user.email}}' ng-readonly='notEditing'>
-        </label>
-        <label class='item item-input'>
-          <input type='text' name='links' placeholder='Links' value='{{user.links}}' ng-readonly='notEditing'>
-        </label>
-        <label class='item item-input'>
-          <input type='text' name='skills' placeholder='Skills' value='{{user.skills}}' ng-readonly='notEditing'>
-        </label>
+    <button id='flipCard' class='button icon ion-email cardViewButton' on-touch='flipCard()'></button>
+
+    <div class='wholeView'>
+      <div class='card'>
+        <!-- <div class='row'> -->
+        <img class='col' src='img/sfSkyline.jpg'>
+
+        <div ng-show='side1'>
+          <label>
+            <input id='userCardName' type='text' name='name' placeholder='Full Name' value='{{user.name}}' ng-readonly='notEditing'>
+          </label>
+          <label>
+            <input id='userCardJob' type='text' name='job' placeholder='Job Title/Company' value='{{user.job}}' ng-readonly='notEditing'>
+          </label>
+          <label>
+            <input id='userCardLocation' type='text' name='location' placeholder='City, State' value='{{user.location}}' ng-readonly='notEditing'>
+          </label>
+          <label>
+            <input id='userCardEmail' type='email' name='email' placeholder='Email' value='{{user.email}}' ng-readonly='notEditing'>
+          </label>
+          <label>
+            <input id='userCardLinks' type='text' name='links' placeholder='Links' ng-model='link' ng-readonly='notEditing' ng-repeat='(link, url) in user.links'>
+          </label>
+          <label>
+            <input id='userCardSkills' type='text' name='skills' placeholder='Skills' value='{{skill}}' ng-readonly='notEditing' ng-repeat='skill in user.skills'>
+          </label>
+        <!-- </div> -->
+        </div>
       </div>
     </div>
   </ion-content>
