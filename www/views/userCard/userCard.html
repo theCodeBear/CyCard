@@ -1,29 +1,27 @@
 <ion-view>
   <ion-content>
-    View/Edit user card
-    <button ui-sref='received'>Get outta here</button>
-    <!-- <button class='button' on-touch='editMode()'>Edit</button> -->
-    <button id='editSaveCard' class='button button-energized' on-touch='cardMode(editSave)'>{{ editSave }}</button>
+    <button id='homeCardButton' class='button button-calm icon ion-home cardViewButton' ui-sref='received'></button>
+    <button id='editSaveCard' class='button button-energized icon ion-edit cardViewButton' on-touch='cardMode(editSave)'></button>
     <div class='card'>
       <div class='list'>
         <img src='#'>
         <label class='item item-input'>
-          <input type='text' name='name' placeholder='Full Name' ng-readonly='notEditing'>
+          <input type='text' name='name' placeholder='Full Name' value='{{user.name}}' ng-readonly='notEditing'>
         </label>
         <label class='item item-input'>
-          <input type='text' name='job' placeholder='Job Title/Company' ng-readonly='notEditing'>
+          <input type='text' name='job' placeholder='Job Title/Company' value='{{user.job}}' ng-readonly='notEditing'>
         </label>
         <label class='item item-input'>
-          <input type='text' name='location' placeholder='City, State' ng-readonly='notEditing'>
+          <input type='text' name='location' placeholder='City, State' value='{{user.location}}' ng-readonly='notEditing'>
         </label>
         <label class='item item-input'>
-          <input type='email' name='email' placeholder='Email' ng-readonly='notEditing'>
+          <input type='email' name='email' placeholder='Email' value='{{user.email}}' ng-readonly='notEditing'>
         </label>
         <label class='item item-input'>
-          <input type='text' name='links' placeholder='Links' ng-readonly='notEditing'>
+          <input type='text' name='links' placeholder='Links' value='{{user.links}}' ng-readonly='notEditing'>
         </label>
         <label class='item item-input'>
-          <input type='text' name='skills' placeholder='Skills' ng-readonly='notEditing'>
+          <input type='text' name='skills' placeholder='Skills' value='{{user.skills}}' ng-readonly='notEditing'>
         </label>
       </div>
     </div>

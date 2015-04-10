@@ -21,4 +21,17 @@ angular.module('cycard')
     }
   };
 
+  $scope.user = {
+    name: 'Todd Kronenberg',
+    job: 'Freelance Web Developer',
+    location: 'Bay Area, CA',
+    email: 'toddkronenberg@gmail.com',
+    links: {
+      website: 'https://toddkronenberg.com',
+      blog: 'https://www.medium.com/@TK_CodeBear',
+      github: 'https://github.com/theCodeBear'
+    },
+    skills: ['Node.js', 'Hapi.js', 'Angular', 'jQuery']
+  };
+
 }]);
