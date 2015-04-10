@@ -39,4 +39,29 @@ angular.module('cycard')
     skills: ['Node.js', 'Hapi.js', 'Angular', 'jQuery']
   };
 
+  // $scope.inputFocus = false;
+  // $scope.screenTouch = function() {
+  //   if (!$scope.notEditing) {
+  //     console.log($(this).prev().prop('tagName'));
+  //     console.log('active: ', $(document.activeElement)[0].firstchild);
+  //     // if ($(document.activeElement).)
+  //   }
+  // };
+
+  $scope.color = '#000000';
+  $('#colorCardLabel').css('background-color', $scope.color);
+  $scope.cardColor = '#DDDDAA';
+  // $('#backgroundColoCardLabel').css('background-color', $scope.cardColor);
+  $('#userCard').css('background-color', $scope.cardColor);
+
+  $scope.changeBackgroundColor = function(color) {
+    $('#userCard').css('background-color', color);
+  };
+
+  $scope.changeLabelColor = function(color) {
+    $(document.activeElement).css('color', color);
+    $('#colorCardLabel').css('background-color', color);
+  };
+  // $('#colorCard').css('background-color', $scope.color);
+
 }]);

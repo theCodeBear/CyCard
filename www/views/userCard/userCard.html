@@ -1,11 +1,21 @@
 <ion-view>
-  <ion-content>
+  <ion-content >
     <button id='homeCardButton' class='button icon ion-home cardViewButton' ui-sref='received'></button>
     <button id='editSaveCard' class='button button-energized icon ion-edit cardViewButton' on-touch='cardMode(editSave)'></button>
     <button id='flipCard' class='button icon ion-email cardViewButton' on-touch='flipCard()'></button>
 
+    <!-- <button id='colorCard' class='button button-royal icon ion-bucket carViewButton' on-touch='' -->
+
+    <label id='backgroundColorCardLabel' class='cardViewButton' ng-hide='notEditing'>
+      <input id='backgroundColorCard' type='color' ng-model='cardColor' ng-change='changeBackgroundColor(cardColor)'>
+    </label>
+
+    <label id='colorCardLabel' class='cardViewButton' ng-hide='notEditing'>
+      <input id='colorCard' type='color' ng-model='color' ng-change='changeLabelColor(color)'>
+    </label>
+
     <div class='wholeView'>
-      <div class='card'>
+      <div id='userCard' class='card'>
         <!-- <div class='row'> -->
         <img class='col' src='img/sfSkyline.jpg'>
 

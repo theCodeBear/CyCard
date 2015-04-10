@@ -98,10 +98,9 @@ i {
 .card {
   padding: 10px;
   text-align: center;
-  background-color: #DDA;
+  /*background-color: #DDA;*/
   margin: 0;
-  width: 95%;
-  height: 95%;
+  width: 100%;
 }
 
 .card label {
@@ -136,16 +135,40 @@ i {
   color: white;
 }
 
+#backgroundColorCardLabel {
+  top: 85%;
+  left: 10px;
+  border: 1px solid black;
+}
+
+#backgroundColorCard {
+  visibility: hidden;
+}
+
+#colorCardLabel {
+  top: 85%;
+  left: 10px;
+  width: 30px;
+  margin-left: 18px;
+  margin-top: 18px;
+  height: 30px;
+}
+
+#colorCard {
+  visibility: hidden;
+}
+
 .cardViewButton {
   position: absolute;
   z-index: 10;
   top: 5px;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 66px;
+  height: 66px;
   border-radius: 50%;
   font-size: 2em;
   color: black;
+  /*box-shadow: 0 0 0 1px white;*/
 }
 
 #userCardName {
