@@ -1,19 +1,23 @@
 angular.module('cycard')
 
 .controller('loginCtrl', ['$scope', '$rootScope', '$state', function($scope, $rootScope, $state) {
-  // console.log('loggedin: ', $rootScope.loggedIn);
-  // if($rootScope.loggedIn === true)
-  //   $state.go('received');
 
-  // // console.log('login', $state.current.name);
-  // $rootScope.showNav = false;
-  // console.log('loggedin: ', $rootScope.loggedIn);
+  var login = false;
 
-  // if ($rootScope.loggedIn)
-  //   $state.go('received');
+  $scope.goToRegister = function() {
+    $('input').val('');
+    $state.go('register');
+  };
 
   $scope.login = function() {
-    $rootScope.loggedIn = true;
-    $state.go('register');
+    if (login === false) {
+      $('#loginFormId').css('display', 'initial');
+      $('#loginFormId').animate({ height: '89px'}, 400);
+      login = true;
+    } else if (login === true) {
+      $rootScope.loggedIn = true;
+      $('input').val('');
+      $state.go('received');
+    }
   };
 }]);

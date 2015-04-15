@@ -1,7 +1,29 @@
 <ion-view>
   <ion-content id='loginContent'>
+
+    <div class='center' id='titleLogo'>
+      <h1> CyCard </h1>
+    </div>
+
+    <div id='loginFormId' class='center col-xs-10 col-xs-offset-1'>
+      <form name='loginForm'>
+        <label class='item item-input'>
+          <input type='email' name='email' ng-model='email' placeholder='Email'>
+        </label>
+        <label class='item item-input'>
+          <input type='password' name='password' ng-model='password' placeholder='Password'>
+        </label>
+      </form>
+    </div>
+
     <div id='loginWrapper' class='center col-xs-8 col-xs-offset-2'>
       <button ng-click='login()' id='login' class='button button-balanced button-block'>Login</button>
+      <div id='signUpWrapper'>
+        First time... <span id='signUpLink' on-touch='goToRegister()'>Sign Up</span>
+      </div>
     </div>
+
+    <div class='blurBackground col-xs-8 col-xs-offset-2'></div>
+
   </ion-content>
 </ion-view>

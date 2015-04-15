@@ -6,16 +6,16 @@
 
     <div class='list'>
       <label class='item item-input'>
-        <input type='text' name='name' placeholder='Full Name'>
+        <input type='text' ng-model='user.name' placeholder='Full Name'>
       </label>
       <label class='item item-input'>
-        <input type='email' name='email' placeholder='Email'>
+        <input type='email' ng-model='user.email' placeholder='Email'>
       </label>
       <label class='item item-input'>
-        <input type='password' name='password' placeholder='Password'>
+        <input type='password' ng-model='user.password' placeholder='Password'>
       </label>
       <label class='item item-input'>
-        <input type='password' name='password2' placeholder='Confirm Password'>
+        <input type='password' ng-model='user.password2' placeholder='Confirm Password'>
       </label>
       <!-- <label class='item item-input'>
         <input type='text' name='job' placeholder='Job Title'>
@@ -25,7 +25,8 @@
       </label> -->
     </div>
     <div class='row' style='margin-left: 0;'>
-        <button id='editSave' class='button button-energized col col-33 col-offset-33' on-touch='register()'>Register</button>
+        <button id='editSave' class='button button-energized col col-33 col-offset-33' on-touch='register(user)'>Register</button>
     </div>
+    {{ user.name }} {{ user.email }} {{ user.password }}
   </ion-content>
 </ion-view>
