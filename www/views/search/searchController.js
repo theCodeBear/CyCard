@@ -1,6 +1,8 @@
 angular.module('cycard')
 
-.controller('searchCtrl', ['$scope', function($scope) {
+.controller('searchCtrl', ['$scope', '$state', 'Users', function($scope, $state, Users) {
+
+  Users.status($state.current.name);
 
   $scope.fakeDatabaseNames = [
     {name:'todd kronenberg'},

@@ -1,6 +1,8 @@
 angular.module('cycard')
 
-.controller('receivedCtrl', ['$scope', '$rootScope', '$state', function($scope, $rootScope, $state) {
+.controller('receivedCtrl', ['$scope', '$rootScope', '$state', 'Users', function($scope, $rootScope, $state, Users) {
+
+  Users.status($state.current.name);
 
   // $rootScope.showNav = !!$state.current.name;
   // $('ion-header-bar').removeClass('ng-hide');

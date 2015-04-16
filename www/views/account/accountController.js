@@ -1,6 +1,8 @@
 angular.module('cycard')
 
-.controller('accountCtrl', ['$scope', '$animate', '$state', function($scope, $animate, $state) {
+.controller('accountCtrl', ['$scope', '$animate', '$state', 'Users', function($scope, $animate, $state, Users) {
+
+  Users.status($state.current.name);
 
   $scope.editSave = 'Edit';
   $scope.notEditing = true;

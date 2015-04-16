@@ -1,6 +1,8 @@
 angular.module('cycard')
 
-.controller('userCardCtrl', ['$scope', function($scope) {
+.controller('userCardCtrl', ['$scope', '$state', 'Users', function($scope, $state, Users) {
+
+  Users.status($state.current.name);
 
   $scope.editSave = 'Edit';
   $scope.notEditing = true;

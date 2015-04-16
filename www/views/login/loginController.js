@@ -4,6 +4,8 @@ angular.module('cycard')
 
 .controller('loginCtrl', ['$scope', '$rootScope', '$state', 'Users', function($scope, $rootScope, $state, Users) {
 
+  Users.status($state.current.name);
+
   $scope.user = {email: '', password: ''};
 
   $scope.goToRegister = function() {

@@ -6,6 +6,8 @@ angular.module('cycard')
 
   Parse.initialize("NgKfbIjZB8Q391Td73hd6V3vDURSuwGrGsCWnz2W", "0WsQdhNLw4wsGWP3Ws4K1WiFVwkmsWGQ3czEyFNE");
 
+  // console.log('state', $state.current.name);
+  Users.status($state.current.name);
 
   $scope.register = function(input) {
     if (input.password === input.password2) {

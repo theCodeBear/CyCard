@@ -1,6 +1,8 @@
 angular.module('cycard')
 
-.controller('sentCtrl', ['$scope', function($scope) {
+.controller('sentCtrl', ['$scope', '$state', 'Users', function($scope, $state, Users) {
+
+  Users.status($state.current.name);
 
   $scope.fakeData = [
     {

@@ -46,7 +46,8 @@ angular.module('cycard')
           user.set('password', password);
           user.save(null, {
             success: function(dbUser) {
-              console.log(dbUser);
+              $rootScope.userAttr = dbUser.attributes;
+              $rootScope.userId = dbUser.id;
               $state.go('userCard');
             },
             error: function(dbUser, error) {
@@ -63,8 +64,24 @@ angular.module('cycard')
     });    
   }
 
+// STATUS METHOD TO CHECK LOGIN STATUS OF USER
+  var status = function(state) {
+    if ($rootScope.userId) {
+      console.log('User ID: ', $rootScope.userId);
+      // if logged in the user can't go to login or register states
+      if (state === 'login' || state === 'register')
+        $state.go('received');
+    } else {
+      // if not logged in take user to login state if user is inside the app
+      if (state !== 'login' && state !== 'register')
+        $state.go('login');
+    }
+  };
 
 
-  return { login: login, register: register };
+
+
+
+  return { login: login, register: register, status: status };
 
 }]);
