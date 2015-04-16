@@ -4,8 +4,9 @@ Parse.initialize("NgKfbIjZB8Q391Td73hd6V3vDURSuwGrGsCWnz2W", "0WsQdhNLw4wsGWP3Ws
 
 angular.module('cycard')
 
-.factory('Users', ['$q', '$rootScope', function($q, $rootScope) {
+.factory('Users', ['$q', '$rootScope', '$state', function($q, $rootScope, $state) {
 
+// LOGIN METHOD
   var login = function(email, password) {
     var deferred = $q.defer();
     var User = Parse.Object.extend('Users');
@@ -30,8 +31,40 @@ angular.module('cycard')
     return deferred.promise;
   };
 
+// REGISTER METHOD
+  var register = function(email, name, password) {
+    var User = Parse.Object.extend('Users');
+    var query = new Parse.Query(User);
+    query.equalTo('email', email);
+    query.find({
+      success: function(results) {
+        // If email not found in database, created new user
+        if (results.length === 0) {
+          var user = new User();
+          user.set('email', email);
+          user.set('fullName', name);
+          user.set('password', password);
+          user.save(null, {
+            success: function(dbUser) {
+              console.log(dbUser);
+              $state.go('userCard');
+            },
+            error: function(dbUser, error) {
+              alert('problem with saving to database', error.message);
+            }
+          });
+        } else {  // if email found, alert user
+          alert('You have already created an account with that email');
+        }
+      },
+      error: function(error) {
+        alert('error in register find', error.message);
+      }
+    });    
+  }
 
 
-  return { login: login };
+
+  return { login: login, register: register };
 
 }]);
