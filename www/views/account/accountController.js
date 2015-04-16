@@ -24,7 +24,7 @@ angular.module('cycard')
   };
 
   $scope.logout = function() {
-    $state.go('login');
+    Users.logout();
   };
 
 }]);

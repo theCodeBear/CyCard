@@ -67,7 +67,6 @@ angular.module('cycard')
 // STATUS METHOD TO CHECK LOGIN STATUS OF USER
   var status = function(state) {
     if ($rootScope.userId) {
-      console.log('User ID: ', $rootScope.userId);
       // if logged in the user can't go to login or register states
       if (state === 'login' || state === 'register')
         $state.go('received');
@@ -78,10 +77,17 @@ angular.module('cycard')
     }
   };
 
+// LOGOUT METHOD
+  var logout = function() {
+    delete $rootScope.userAttr;
+    delete $rootScope.userId;
+    $state.go('login');
+  };
 
 
 
 
-  return { login: login, register: register, status: status };
+
+  return { login: login, register: register, status: status, logout: logout };
 
 }]);
