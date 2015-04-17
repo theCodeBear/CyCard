@@ -12,6 +12,10 @@ angular.module('cycard')
   $scope.register = function(input) {
     if (input.password === input.password2) {
       Users.register(input.email, input.name, input.password);
+      // console.log({ fullName: { name: input.name }, email: { address: input.email } });
+      // Cards.save({ fullName: { name: input.name }, email: { address: input.email } });
+      // Cards.save(input);
+      // $state.go('userCard');
     } else {
       alert('Passwords do not match');
     }

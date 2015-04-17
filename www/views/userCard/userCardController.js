@@ -1,14 +1,20 @@
 angular.module('cycard')
 
-.controller('userCardCtrl', ['$scope', '$state', 'Users', function($scope, $state, Users) {
+.controller('userCardCtrl', ['$scope', '$state', '$rootScope', 'Users', 'Cards', function($scope, $state, $rootScope, Users, Cards) {
 
   Users.status($state.current.name);
 
   $scope.editSave = 'Edit';
   $scope.notEditing = true;
   $scope.side1 = true;
+  Cards.get($rootScope.userId).then(function(data) {
+    $scope.user = data;
+    console.log('user', $scope.user);
+  });
+
 
   $scope.cardMode = function(text) {
+    // user wants to edit card
     if (text === 'Edit') {
       $scope.editSave = 'Save';
       $('#editSaveCard').addClass('button-positive');
@@ -17,7 +23,9 @@ angular.module('cycard')
       $('#editSaveCard').addClass('fa fa-floppy-o');
       $('#editSaveCard').removeClass('icon ion-edit');
       $scope.notEditing = false;
-    } else {
+    } else {  // user saves card
+
+      // Cards.save();
       $scope.editSave = 'Edit';
       $('#editSaveCard').addClass('button-energized');
       $('#editSaveCard').removeClass('button-positive');
@@ -32,18 +40,18 @@ angular.module('cycard')
 
   };
 
-  $scope.user = {
-    name: 'Todd Kronenberg',
-    job: 'Freelance Web Developer',
-    location: 'Bay Area, CA',
-    email: 'toddkronenberg@gmail.com',
-    links: {
-      website: 'https://toddkronenberg.com',
-      blog: 'https://www.medium.com/@TK_CodeBear',
-      github: 'https://github.com/theCodeBear'
-    },
-    skills: ['Node.js', 'Hapi.js', 'Angular', 'jQuery']
-  };
+  // $scope.user = {
+  //   name: 'Todd Kronenberg',
+  //   job: 'Freelance Web Developer',
+  //   location: 'Bay Area, CA',
+  //   email: 'toddkronenberg@gmail.com',
+  //   links: {
+  //     website: 'https://toddkronenberg.com',
+  //     blog: 'https://www.medium.com/@TK_CodeBear',
+  //     github: 'https://github.com/theCodeBear'
+  //   },
+  //   skills: ['Node.js', 'Hapi.js', 'Angular', 'jQuery']
+  // };
 
   // $scope.inputFocus = false;
   // $scope.screenTouch = function() {

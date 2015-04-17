@@ -23,22 +23,24 @@
 
         <div ng-show='side1'>
           <label>
-            <input id='userCardName' type='text' name='name' placeholder='Full Name' value='{{user.name}}' ng-readonly='notEditing'>
+            <input id='userCardName' type='text' name='name' placeholder='Full Name' ng-model='user.fullName' ng-readonly='notEditing'>
           </label>
           <label>
-            <input id='userCardJob' type='text' name='job' placeholder='Job Title/Company' value='{{user.job}}' ng-readonly='notEditing'>
+            <input id='userCardJob' type='text' name='job' placeholder='Job Title/Company' ng-model='user.job' ng-readonly='notEditing'>
           </label>
           <label>
-            <input id='userCardLocation' type='text' name='location' placeholder='City, State' value='{{user.location}}' ng-readonly='notEditing'>
+            <input id='userCardLocation' type='text' name='location' placeholder='City, State' ng-model='user.location' ng-readonly='notEditing'>
           </label>
           <label>
-            <input id='userCardEmail' type='email' name='email' placeholder='Email' value='{{user.email}}' ng-readonly='notEditing'>
+            <input id='userCardEmail' type='email' name='email' placeholder='Email' ng-model='user.email' ng-readonly='notEditing'>
           </label>
           <label>
             <input id='userCardLinks' type='text' name='links' placeholder='Links' ng-model='link' ng-readonly='notEditing' ng-repeat='(link, url) in user.links'>
+            <!-- <input id='userCardLinks' type='text' name='links' placeholder='Links' ng-model='user.links' ng-readonly='notEditing'> -->
           </label>
           <label>
-            <input id='userCardSkills' type='text' name='skills' placeholder='Skills' value='{{skill}}' ng-readonly='notEditing' ng-repeat='skill in user.skills'>
+            <input id='userCardSkills' type='text' name='skills' placeholder='Skills' ng-model='skill' ng-readonly='notEditing' ng-repeat='skill in user.skills'>
+            <!-- <input id='userCardSkills' type='text' name='skills' placeholder='Skills' ng-model='user.skills' ng-readonly='notEditing'> -->
           </label>
         <!-- </div> -->
         </div>

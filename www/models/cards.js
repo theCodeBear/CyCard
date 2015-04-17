@@ -4,25 +4,48 @@ Parse.initialize("NgKfbIjZB8Q391Td73hd6V3vDURSuwGrGsCWnz2W", "0WsQdhNLw4wsGWP3Ws
 
 angular.module('cycard')
 
-.factory('Cards', ['Users', '$q', '$rootScope', function(Users, $q, $rootScope) {
+.factory('Cards', ['$q', '$rootScope', '$state', function($q, $rootScope, $state) {
 
-// CREATE function to create or update a user's business card
-  function save(card) {
+// CREATE function to create a user's business card
+  function create() {
     var Card = Parse.Object.extend('Cards');
     var card = new Card();
-    card.set('fullName', { name: card.fullName.name, color: card.fullName.name });
-    card.set('job', { job: card.job.title, color: card.job.color });
-    card.set('email', { email: card.email.address, color: card.email.color });
-    card.set('links', card.links);
-    card.set('skills', card.skills);
-    card.set('picture', card.pictureUrl);
-    card.set('backgroundColor', card.backgroundColor);
+    card.set('userID', $rootScope.userId);
+    card.set('fullName', $rootScope.userAttr.fullName);
+    card.set('email', $rootScope.userAttr.email);
+    card.save(null, {
+      success: function(dbCard) {
+        $state.go('userCard');
+      },
+      error: function(error) {
+        alert('problem creating new card', error.message);
+      }
+    });
+  }
+
+// UPDATE function to update a user's business card
+  function update(input) {
+    var Card = Parse.Object.extend('Cards');
+    var card = new Card();
+    // console.log('id', $rootScope.userId);
+    // console.log('name', input.name);
+    card.set('userID', $rootScope.userId);
+    card.set('fullName', input.name);
+    card.set('email', input.email);
+    card.set('job', input.job);
+    card.set('location', input.location);
+    card.set('links', input.links);
+    card.set('skills', input.skills);
+    card.set('picture', input.pictureUrl);
+    card.set('colors', input.colors);
+    card.set('backgroundColor', input.backgroundColor);
     card.save(null, {
       success: function(dbCard) {
         $rootScope.userCard = dbCard;
+        // $state.go('userCard');
       },
       error: function(dbCard, error) {
-        alert('problem creating new card', error.message);
+        alert('problem saving card', error.message);
       }
     });
   }
@@ -40,8 +63,7 @@ angular.module('cycard')
           alert('something went wrong! could not find the business card');
           deferred.resolve(false);
         } else {
-          alert('card found');
-          deferred.resolve(card);
+          deferred.resolve(card[0].attributes);
         }
       },
       error: function(card, error) {
@@ -53,7 +75,7 @@ angular.module('cycard')
   }
 
 
-  return { save: save, get: get};
+  return { create: create, update: update, get: get};
 
 
 }]);

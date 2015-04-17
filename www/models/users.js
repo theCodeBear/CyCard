@@ -4,7 +4,7 @@ Parse.initialize("NgKfbIjZB8Q391Td73hd6V3vDURSuwGrGsCWnz2W", "0WsQdhNLw4wsGWP3Ws
 
 angular.module('cycard')
 
-.factory('Users', ['$q', '$rootScope', '$state', function($q, $rootScope, $state) {
+.factory('Users', ['$q', '$rootScope', '$state', 'Cards', function($q, $rootScope, $state, Cards) {
 
 // LOGIN METHOD
   var login = function(email, password) {
@@ -48,7 +48,8 @@ angular.module('cycard')
             success: function(dbUser) {
               $rootScope.userAttr = dbUser.attributes;
               $rootScope.userId = dbUser.id;
-              $state.go('userCard');
+              Cards.create();
+              // $state.go('userCard');
             },
             error: function(dbUser, error) {
               alert('problem with saving to database', error.message);
